@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="guest" class="com.malhi.spring.Guest">
+        <property name="id" value="#{new java.util.Random().nextInt(100000)}"></property>
+        <property name="firstName" value="Lovepreet"></property>
+        <property name="lastName" value="Malhi"></property>
+        <property name="phonenumber" value="6475632829"></property>
+        <property name="address" ref="add"></property>
+    </bean>
+    <bean name="add" class="com.malhi.spring.Address">
+        <property name="id" value="#{new java.util.Random().nextInt(100000)}"></property>
+        <property name="addressType" value="HOME"></property>
+        <property name="city" value="Northyork"></property>
+        <property name="postal" value="M3N 2B4"></property>
+    </bean>
+    <bean name="guestBookService" class="com.malhi.spring.GuestBookService"></bean>
+</beans>
